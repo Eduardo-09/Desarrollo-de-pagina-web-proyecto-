@@ -1,0 +1,98 @@
+<html>
+<head>
+    <title>Contactanos</title>
+    <style type="text/css">
+        *{
+    padding: 0px;
+    margin: 0px;
+    font-family: "Raleway";
+}
+
+body{
+    background-size: cover;
+    background-position: center;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-flow: column;
+    background-color: white;
+    width: 40%;
+    height: 80%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0,0,0,0.8) 0px 0px 50px;
+    border-radius: 10px;
+}
+
+input, textarea{
+    border: none;
+    resize: none;
+    outline: none;
+    padding: 15px 0px;
+    width: 80%;
+    margin: 20px;
+    transition: all 300ms;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+input:focus, textarea:focus{
+    border-bottom-color: #610061 ;
+}
+
+
+button{
+    border: none;
+    outline: none;
+    background: #A2D9CE;
+    padding: 15px;
+    width: 200px;
+    color: white;
+    border-radius: 2px;
+    box-shadow: rgba(0,0,0,0.7) 0px 0px 10px;
+    margin: 20px 0px;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+button:hover{
+    transform: scale(1.05);
+    box-shadow: rgba(0,0,0,0.9) 0px 0px 10px;
+}
+
+    </style>
+</head>
+<body background="https://previews.123rf.com/images/worldion/worldion1507/worldion150700449/42781666-mano-turquesa-dibujado-hojas-sobre-fondo-oscuro-modelo-incons%C3%BAtil-con-las-hojas-elegante-para-el-dise%C3%B1o-fon.jpg">
+    <center>
+    <?php 
+$destino ="joseeduardopere75@gmail.com";
+$Nombre = $_POST["Nombre"];
+$Correo = $_POST["Correo"];
+$Telefono = $_POST["Telefono"];
+$Nensaje = $_POST["Mensaje"];
+$contenido = "Nombre: " . $Nombre . "\nCorreo: " . $Correo . 
+"\nTelefono: " . $Telefono . "\nMensaje: " . $Mensaje;
+mail($destino,"Contacto",$contenido);
+?>
+    <div class="container">
+        <form>
+            <h1>Contactanos</h1>
+            <input type="text" name="Nombre" placeholder="Nombre">
+            <input type="text" name="Correo" placeholder="Correo">
+            <input type="text" name="Telefono" placeholder="Telefono">
+            <textarea name="Mensaje" placeholder="Escribe aqui tu mensaje"></textarea>
+            <button>Enviar Mensaje</button>
+        </form>
+    </div>
+    </center>
+</body>
+</html>
